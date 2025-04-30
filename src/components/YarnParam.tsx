@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { getParamType, getParamValue } from "../lib/node";
-import { Param, ParamKeyType, ParamValueType } from "../lib/types";
+import { Param, ParamValueType } from "../lib/types";
 import { Input } from "./ui/input";
 import { useAtom, useAtomValue, useSetAtom } from "jotai";
 import {

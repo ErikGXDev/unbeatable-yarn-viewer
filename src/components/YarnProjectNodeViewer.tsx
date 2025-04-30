@@ -1,5 +1,4 @@
 import { useAtomValue } from "jotai";
-import { YarnNode } from "../lib/types";
 import YarnInstruction from "./YarnInstruction";
 import { activeYarnNodeAtom } from "@/lib/atom";
 import { Tabs, TabsList, TabsTrigger } from "./ui/tabs";

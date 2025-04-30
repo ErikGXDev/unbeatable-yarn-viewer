@@ -1,6 +1,5 @@
 import { atom } from "jotai";
 import { Project, YarnNode } from "./types";
-import { focusAtom } from "jotai-optics";
 
 export const projectDataAtom = atom({
   nodes: {},

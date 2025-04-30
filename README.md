@@ -1,54 +1,25 @@
-# React + TypeScript + Vite
+# UNBEATABLE Yarn Viewer
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> A Tool for editing UNBEATABLE (or any Yarn-related project) Dialog Programs and Lines.
 
-Currently, two official plugins are available:
+## "What is Yarn?"
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Yarn (full name "Yarn Spinner") is a tool primarily used in Unity games to create dialogue easily. This dialogue can be extracted by getting the "compiled" Yarn Programs found in game files. This tool is supposed to be a semi-user-friendly interface for working with these compiled programs.
 
-## Expanding the ESLint configuration
+## How to use (UNBEATABLE DEMO specific)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Extract Translation files used in the game using [My (ErikGXDev's) Unbeatable Mod](https://github.com/ErikGXDev/unbeatable-demo-song-hack) (able to extract yarn projects and lines) or [Taco's Translation Mod](https://github.com/TacoDogUnbeatableThing/CustomTranslations) (only able to extract lines).
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+### Using ErikGXDev's Mod
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Open the Game after installing the mod according to its [Installation Instructions](https://github.com/TacoDogUnbeatableThing/CustomTranslations) and open its dev menu on the top left. Press the `Dump Translations` button. Yarn Projects and Lines will be saved as json in the game's directory inside a `dumped` folder. To apply modified translations, put these files in a `Translation` folder in the game directory.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Using the interface (boring guide)
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+Load dumped projects and lines using the respective buttons in the top left. Select a dialog (aka "Node" or "Yarn Node") you want to edit using the "Select a node" Selector.
+
+Edit values used in Nodes using the left editor panel. Change from "Viewer" to "Editor" to switch to a JSON editor, which allows for adding and also removing individual instructions. Make sure to press the Save button to apply your changes.
+
+Lines can be edited using the panel on the right. Click on the pencil icon to switch to edit mode. Make sure to press that button again to save your changes.
+
+Use the Save buttons to Save your changes to a new file. Add these modified files to the game according to the instructions above.

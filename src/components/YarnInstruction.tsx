@@ -1,5 +1,4 @@
-import { Instruction, Param } from "../lib/types";
-import { getParamType, getParamValue } from "../lib/node";
+import { Instruction } from "../lib/types";
 import YarnParam from "./YarnParam";
 
 export default function YarnInstruction({

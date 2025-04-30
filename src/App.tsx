@@ -1,4 +1,4 @@
-import { useAtom, useAtomValue, useSetAtom } from "jotai";
+import { useAtom, useAtomValue } from "jotai";
 import { activeYarnNodeAtom, linesDataAtom, projectDataAtom } from "./lib/atom";
 import FilePicker from "./components/FilePicker";
 import YarnProjectNodeViewer from "./components/YarnProjectNodeViewer";
@@ -31,7 +31,7 @@ function App() {
             <div className="flex gap-2">
               <FilePicker
                 label="Load Project"
-                onFiles={(contents, files) => {
+                onFiles={(contents) => {
                   const filename = contents[0].name;
                   setFilename(filename);
                   const fileJSON = JSON.parse(contents[0].content);
