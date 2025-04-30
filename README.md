@@ -12,7 +12,7 @@ Extract Translation files used in the game using [My (ErikGXDev's) Unbeatable Mo
 
 ### Using ErikGXDev's Mod
 
-Open the Game after installing the mod according to its [Installation Instructions](https://github.com/TacoDogUnbeatableThing/CustomTranslations) and open its dev menu on the top left. Press the `Dump Translations` button. Yarn Projects and Lines will be saved as json in the game's directory inside a `dumped` folder. To apply modified translations, put these files in a `Translation` folder in the game directory.
+Open the Game after installing the mod according to its [Installation Instructions](https://github.com/TacoDogUnbeatableThing/CustomTranslations) and open its dev menu on the top left. Wait until you reached the Main Menu. Press the `Dump Translations` button. Yarn Projects and Lines will be saved as json in the game's directory inside a `dumped` folder. To apply modified translations, put these files in a `Translation` folder in the game directory.
 
 ## Using the interface (boring guide)
 
