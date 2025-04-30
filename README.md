@@ -23,3 +23,11 @@ Edit values used in Nodes using the left editor panel. Change from "Viewer" to "
 Lines can be edited using the panel on the right. Click on the pencil icon to switch to edit mode. Make sure to press that button again to save your changes.
 
 Use the Save buttons to Save your changes to a new file. Add these modified files to the game according to the instructions above.
+
+## Disclaimer
+
+This project has been made without thinking about proper state management or data structures. Expect lags and bugs.
+
+## Contributing
+
+PRs are welcome 👍
