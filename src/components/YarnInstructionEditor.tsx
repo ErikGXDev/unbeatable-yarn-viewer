@@ -30,7 +30,7 @@ export default function YarnInstructionEditor() {
   return (
     <div className="relative">
       <div className="flex justify-between items-center py-2 sticky top-0 w-full bg-background border-b border-b-border z-10">
-        <h2>Editor</h2>
+        <h2>JSON Editor</h2>
         <Button
           className="sticky top-8 right-8 z-100"
           onClick={() => save(value)}
@@ -48,8 +48,8 @@ export default function YarnInstructionEditor() {
       />
       <div className="p-4">
         <p className="text-sm text-foreground/80">
-          Edit the instructions in JSON format. The changes will be reflected in
-          the viewer.
+          Edit the node instructions in JSON format. The changes will be
+          reflected in the viewer.
         </p>
         <p className="text-sm text-foreground/80">
           Current node has {activeNode?.instructions?.length ?? 0} instructions

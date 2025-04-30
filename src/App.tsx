@@ -13,6 +13,8 @@ import YarnLineViewer from "./components/YarnLineViewer";
 import { ScrollArea, ScrollBar } from "./components/ui/scroll-area";
 import FileSaver from "./components/FileSaver";
 import { useState } from "react";
+import { Button } from "./components/ui/button";
+import GithubIcon from "./components/GithubIcon";
 
 function App() {
   const [projectData, setProjectData] = useAtom(projectDataAtom);
@@ -25,40 +27,50 @@ function App() {
     <>
       <ThemeProvider defaultTheme="dark">
         <main className="h-screen flex flex-col">
-          <div className="flex gap-2 p-4 border-b border-b-border">
-            <FilePicker
-              label="Load Project"
-              onFiles={(contents, files) => {
-                const filename = contents[0].name;
-                setFilename(filename);
-                const fileJSON = JSON.parse(contents[0].content);
-                console.log(fileJSON);
-                setProjectData(fileJSON);
-              }}
-            />
+          <div className="flex justify-between items-center gap-2 p-4 border-b border-b-border">
+            <div className="flex gap-2">
+              <FilePicker
+                label="Load Project"
+                onFiles={(contents, files) => {
+                  const filename = contents[0].name;
+                  setFilename(filename);
+                  const fileJSON = JSON.parse(contents[0].content);
+                  console.log(fileJSON);
+                  setProjectData(fileJSON);
+                }}
+              />
 
-            <FilePicker
-              label="Load Lines"
-              onFiles={(contents) => {
-                const fileJSON = JSON.parse(contents[0].content);
-                console.log(fileJSON);
-                setLinesData(fileJSON);
-              }}
-            />
+              <FilePicker
+                label="Load Lines"
+                onFiles={(contents) => {
+                  const fileJSON = JSON.parse(contents[0].content);
+                  console.log(fileJSON);
+                  setLinesData(fileJSON);
+                }}
+              />
 
-            <NodeSelector options={Object.keys(projectData.nodes)} />
+              <NodeSelector options={Object.keys(projectData.nodes)} />
 
-            <FileSaver
-              fileName={filename}
-              fileContents={JSON.stringify(projectData, null, 2)}
-              label="Save Project"
-            />
+              <FileSaver
+                fileName={filename}
+                fileContents={JSON.stringify(projectData, null, 2)}
+                label="Save Project"
+              />
 
-            <FileSaver
-              fileName="lines.json"
-              fileContents={JSON.stringify(linesData, null, 2)}
-              label="Save Lines"
-            />
+              <FileSaver
+                fileName="lines.json"
+                fileContents={JSON.stringify(linesData, null, 2)}
+                label="Save Lines"
+              />
+            </div>
+            <div className="flex items-center gap-2 text-foreground/80">
+              <a href="https://github.com/ErikGXDev/unbeatable-yarn-viewer">
+                <Button variant={"ghost"} className="p-0 flex">
+                  <span>(UNBEATABLE) Yarn Viewer by ErikGXDev</span>
+                  <GithubIcon />
+                </Button>
+              </a>
+            </div>
           </div>
           <div className="w-full flex-1 overflow-hidden">
             <ResizablePanelGroup direction="horizontal" className="h-full">
@@ -70,9 +82,17 @@ function App() {
                   </ScrollArea>
                 )}
                 {!activeYarnNode && (
-                  <div className="w-full mt-8 flex justify-center">
-                    <p>No node selected.</p>
-                  </div>
+                  <>
+                    {Object.keys(projectData.nodes).length == 0 ? (
+                      <div className="w-full mt-8 flex justify-center">
+                        <p>No project loaded.</p>
+                      </div>
+                    ) : (
+                      <div className="w-full mt-8 flex justify-center">
+                        <p>Select a node to view its details.</p>
+                      </div>
+                    )}
+                  </>
                 )}
               </ResizablePanel>
               <ResizableHandle withHandle></ResizableHandle>
