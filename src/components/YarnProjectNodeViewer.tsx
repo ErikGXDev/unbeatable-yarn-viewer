@@ -68,14 +68,14 @@ export default function YarnProjectNodeViewer() {
               <br></br>Edit these in the Editor Tab.
             </p>
           </div>
-          <div className="w-[400px] divide-y divide-border border border-border rounded-md">
+          <div className="min-w-[300px] w-fit divide-y divide-border border border-border rounded-md">
             {activeNode?.labels &&
               Object.keys(activeNode.labels).map((labelKey, index) => {
                 let label = activeNode.labels[labelKey];
                 return (
                   <div
                     key={index}
-                    className="p-2 px-4 flex justify-between gap-2"
+                    className="p-2 px-4 flex justify-between gap-12"
                   >
                     <p className="font-medium">{labelKey}</p>
                     <p>{label}</p>

@@ -34,11 +34,13 @@ export function NodeSelectorComboBox({ options }: { options: string[] }) {
           variant="outline"
           role="combobox"
           aria-expanded={open}
-          className="w-[200px] justify-between"
+          className="w-[250px] justify-between"
         >
-          {activeNode?.name
-            ? options.find((opt) => opt === activeNode.name)
-            : "Select a node..."}
+          <span className="text-ellipsis overflow-hidden">
+            {activeNode?.name
+              ? options.find((opt) => opt === activeNode.name)
+              : "Select a node..."}
+          </span>
           <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
         </Button>
       </PopoverTrigger>
