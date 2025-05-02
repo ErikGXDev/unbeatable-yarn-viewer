@@ -15,6 +15,7 @@ import FileSaver from "./components/FileSaver";
 import { useState } from "react";
 import { Button } from "./components/ui/button";
 import GithubIcon from "./components/GithubIcon";
+import { NodeSelectorComboBox } from "./components/NodeSelectorComboBox";
 
 function App() {
   const [projectData, setProjectData] = useAtom(projectDataAtom);
@@ -49,7 +50,7 @@ function App() {
                 }}
               />
 
-              <NodeSelector options={Object.keys(projectData.nodes)} />
+              <NodeSelectorComboBox options={Object.keys(projectData.nodes)} />
 
               <FileSaver
                 fileName={filename}

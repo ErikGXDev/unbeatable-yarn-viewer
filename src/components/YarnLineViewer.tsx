@@ -64,7 +64,7 @@ export default function YarnLineViewer({
 
       <div className="divide-y divide-border pb-64">
         {lineKeys.map((key) => {
-          return <YarnLineCell lineKey={key} />;
+          return <YarnLineCell lineKey={key} key={key} />;
         })}
 
         {Object.keys(linesData).length !== lineKeys.length && !lineFilter && (
