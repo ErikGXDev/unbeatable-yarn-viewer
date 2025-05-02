@@ -6,7 +6,7 @@ export interface Project {
 export interface YarnNode {
   name: string;
   instructions: Instruction[];
-  labels: Record<string, string>;
+  labels: Record<string, number>;
   tags: string[];
 }
 

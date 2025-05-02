@@ -2,7 +2,6 @@ import { useAtom, useAtomValue } from "jotai";
 import { activeYarnNodeAtom, linesDataAtom, projectDataAtom } from "./lib/atom";
 import FilePicker from "./components/FilePicker";
 import YarnProjectNodeViewer from "./components/YarnProjectNodeViewer";
-import NodeSelector from "./components/NodeSelector";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import {
   ResizableHandle,
@@ -16,6 +15,8 @@ import { useState } from "react";
 import { Button } from "./components/ui/button";
 import GithubIcon from "./components/GithubIcon";
 import { NodeSelectorComboBox } from "./components/NodeSelectorComboBox";
+import { Toaster } from "./components/ui/sonner";
+import { toast } from "sonner";
 
 function App() {
   const [projectData, setProjectData] = useAtom(projectDataAtom);
@@ -38,6 +39,8 @@ function App() {
                   const fileJSON = JSON.parse(contents[0].content);
                   console.log(fileJSON);
                   setProjectData(fileJSON);
+
+                  toast.info("Project loaded successfully!");
                 }}
               />
 
@@ -47,6 +50,8 @@ function App() {
                   const fileJSON = JSON.parse(contents[0].content);
                   console.log(fileJSON);
                   setLinesData(fileJSON);
+
+                  toast.info("Lines loaded successfully!");
                 }}
               />
 
@@ -112,6 +117,7 @@ function App() {
             </ResizablePanelGroup>
           </div>
         </main>
+        <Toaster></Toaster>
       </ThemeProvider>
     </>
   );
